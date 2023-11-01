@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/fresher-react-js-task
 /.pnp
 .pnp.js
 
