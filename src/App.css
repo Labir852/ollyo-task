@@ -8,17 +8,18 @@
   justify-content: center;
 }
 .__main__{
-  width: 60%;
+  width: 65%;
   height: 80%;
-  border: 1px solid black;
-  
-  box-shadow:'2px 2px 2px 2px grey';
+  border: 3px solid grey;
+  padding: 20px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .__item__{
   background-color:#1A2027;
+  border-radius: 10px;
 
 }
 .__item__ img {
@@ -26,6 +27,6 @@
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
-.__item__:hover img:hover {
+.__item__:hover img {
 	opacity: .4;
 }
