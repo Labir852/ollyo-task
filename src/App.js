@@ -18,8 +18,9 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import Gallery from './Gallery';
+//import Gallery from './Gallery';
 import { Button } from '@mui/material';
+import Gallery from './Gallery';
 
 function App() {
 
@@ -88,49 +89,56 @@ function App() {
       id:11,
       pic:img11
     },
+    {
+      id:11,
+      pic:img11
+    },
+    {
+      id:11,
+      pic:img11
+    },
+    {
+      id:11,
+      pic:img11
+    },
 
 
   ]
 
-  function FormRow() {
-    return (
-      <React.Fragment >
-         <Grid  xl={4.5} item  >
-          
-           <Item className='__item__ '>
-             <img src={pictures[0].pic}  style ={{height:'150px',width:'150px'}} alt="img" />
-           </Item>
-           
-          </Grid>
-
-         {Array.from(Array(pictures.length)).map((_,index)=>(
-           <Grid item draggable key={pictures[index].id}>
-           <Item xs="auto"  className='__item__'>
-             <img src={pictures[index].pic}  style ={{height:'150px',width:'150px'}} alt="img" />
-           </Item>
-          </Grid>
-         ))} 
-          <Grid item md={3}>
-            <Item  className='__item__' sx={{bgcolor:'white',display:'flex',justifyContent:'center',alignItems:'center'}}>
-              <img src={add}  style ={{height:'50px',width:'50px'}} alt="img1" />
-              <h4>Add Images</h4>
-            </Item>
-        </Grid>
-
-      </React.Fragment>
-    );
-  }
   
   return (
     <div className="App">
        
-     <Box className="__main__" sx={{display: 'grid'}}>
-      <Grid container spacing={3}>
-        <FormRow/>
-      </Grid>
-    </Box>
+     <Box className="__main__" 
+     sx={{
+      display: 'grid',
+      gridAutoFlow: 'row',
+      gridTemplateColumns: 'repeat(5, 1fr)',
+      gridTemplateRows: 'repeat(2, 80px)',
+      gap: 2,
+    }}
+     >
 
-    <Gallery/>
+<Item className='__item__ ' sx={{ gridColumn: 'span 2', gridRow: 'span 2' }}>
+             <img src={pictures[0].pic}  style ={{height:'100%',width:'100%'}} alt="img" />
+           </Item>
+           
+
+         {Array.from(Array(pictures.length)).map((_,index)=>(
+          
+           <Item xs={2} md={4} sm={6}  className='__item__'>
+             <img src={pictures[index].pic}  style ={{height:'100%',width:'100%'}} alt="img" />
+           </Item>
+
+         ))} 
+            <Item xs={2} md={4} sm={6}  className='__item__' sx={{bgcolor:'white',display:'flex',justifyContent:'center',alignItems:'center'}}>
+              <img src={add}  style ={{height:'100%',width:'100%'}} alt="img1" />
+              <h4>Add Images</h4>
+            </Item>
+
+
+    </Box>
+    
     </div>
   );
 }
